@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面加载中...</title>
+    <style>
+        /* 全屏背景图 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 设置背景图 */
+        .bg {
+            background-image: url('https://pic.imgdb.cn/item/670e6805d29ded1a8c48215e.jpg'); /* 替换为你的图片地址 */
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* 正中心的提示框 */
+        .center-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        /* 提示文字样式 */
+        .center-message h1 {
+            font-size: 36px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center-message p {
+            font-size: 18px;
+            margin: 10px 0 0 0;
+        }
+
+        /* 背景遮罩层 */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色遮罩 */
+        }
+    </style>
+    <script>
+        // 页面加载后3秒自动跳转
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector(".center-message h1").textContent = "跳转中...";
+                window.location.href = "http://8.134.187.172:23456"; // 替换为你的目标URL
+            }, 3000); // 3秒后跳转
+        };
+    </script>
+</head>
+<body>
+    <!-- 背景图层 -->
+    <div class="bg"></div>
+
+    <!-- 半透明遮罩层 -->
+    <div class="overlay"></div>
+
+    <!-- 居中的提示信息 -->
+    <div class="center-message">
+        <h1>页面加载中...</h1>
+        <p>即将跳转，请稍候</p>
+    </div>
+</body>
+</html>
